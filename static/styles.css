@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+font-family: 'Open Sans', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+   padding: 2px 2px 2px 2px;
+   vertical-align: top;
+}
+
+.pullright {
+	float: right;
+   clear: both;
+}

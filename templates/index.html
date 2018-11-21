@@ -1,3 +1,17 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<h2>List of datasets</h2>
+
 {% for item in items %}
   <p> <a href="/view?id={{item.id}}">{{ item.id}} </a><p>
 {% endfor %}
+
+</body>
+
+</html>

@@ -1,6 +1,8 @@
 <html>
 <head>
 
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 <script type="application/ld+json">
 {% autoescape false %}
 {{jsonld}}
@@ -10,6 +12,13 @@
 </head>
 
 <body>
+<h2> Viewing Dataset '{{dataset.id}}' </h2>
+
+<div class='pullright' style="padding-bottom: 10px">
+   <a href="/view?id={{dataset.id}}&format=jsonld">View json-ld</a>
+</div>
+
+<div style="clear:both">
 <table>
 <tr>
 <th>Key</th>
@@ -18,12 +27,22 @@
 {% for key, value in dataset.items() %}
     <tr>
       <td>{{key}}</td>
-      <td>{{value}}</td>
+      <td>
+          {% if key == 'keywords' %}
+             {% for var in value %} 
+                <p>{{var}}</p>
+             {% endfor %}
+          {% else %}
+              {{value}}
+          {% endif %}
+      </td>
     </tr>
 {% endfor %}
 </table>
-<a href="/view?id={{dataset.id}}&format=jsonld">View json-ld</a>
+</div>
+<br/>
 
+<br/>
 <br/>
 <a href='/'>Back to index</a>
 </body>
