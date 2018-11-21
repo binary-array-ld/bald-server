@@ -24,6 +24,13 @@ Your application should be now running on http://localhost:4000
 
 ## Usage
 
+## Loading schema.org descriptions
+
+Assuming you have a directory of schema.org descriptions as json-ld, you can use the `example-uploader.sh` (as-is or customised),
+to upload content to via APIs. This will then be listed in the application running on http://localhost:4000
+
+A possible way to get a list of these descriptions is to use the threddsnc2rdf.py tool in the `bald` library.
+
 ### Routes
 
 * GET '/' - list of datasets
