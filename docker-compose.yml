@@ -1,0 +1,20 @@
+web:
+  build: .
+  command: python -u app.py
+  ports:
+    - "4000:5000"
+  volumes:
+    - .:/todo
+  links:
+    - db
+db:
+  image: mongo:latest
+  ports:
+    - "27017:27017"
+
+fuseki:
+  image: stain/jena-fuseki
+  volumes:
+    - ./rdf:/staging
+  ports:
+    - "3030:3030"
